@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Proyecto Final — Centro de Soporte Técnico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+    }
+
+    body {
+      background-color: #f3f4f6;
+    }
+
+    .topbar {
+      background-color: #eb3498;
+      color: #fff;
+      padding: 16px 40px;
+    }
+
+    .topbar h1 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .topbar span {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .container {
+      display: flex;
+      padding: 24px 40px 40px;
+      gap: 24px;
+    }
+
+    /* Panel filtros */
+    .sidebar {
+      width: 260px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 0 1px #e5e7eb;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .sidebar label {
+      font-size: 13px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .sidebar select,
+    .sidebar input {
+      width: 100%;
+      padding: 6px 8px;
+      border-radius: 4px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    /* Lista de tickets */
+    .tickets {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ticket-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 0 1px #e5e7eb;
+    }
+
+    .ticket-main {
+      max-width: 80%;
+    }
+
+    .ticket-code {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .ticket-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .ticket-meta {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .ticket-button {
+      border: none;
+      background-color: #ffffff;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      color: #DA1884;
+      font-weight: 500;
+      border: 1px solid #d1e3ff;
+      transition: background-color 0.15s;
+    }
+
+    .ticket-button:hover {
+      background-color: #eff6ff;
+    }
+
+    /* Responsivo simple */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Proyecto Final — Centro de Soporte Técnico</h1>
+    <span>Solutions4life S.A.S. — Equipo: Camila Valeria Felipe</span>
+  </header>
+
+  <main class="container">
+    <!-- Filtros -->
+    <aside class="sidebar">
+      <h2>Filtros</h2>
+
+      <label for="estado">Estado</label>
+      <select id="estado">
+        <option>Todos</option>
+        <option>Abierto</option>
+        <option>En proceso</option>
+        <option>Cerrado</option>
+      </select>
+
+      <label for="prioridad">Prioridad</label>
+      <select id="prioridad">
+        <option>Todas</option>
+        <option>Baja</option>
+        <option>Media</option>
+        <option>Alta</option>
+        <option>Crítica</option>
+      </select>
+
+      <label for="buscar">Buscar (exacta)</label>
+      <input id="buscar" type="text" placeholder="TS-HW-0238..." />
+    </aside>
+
+    <!-- Lista de tickets -->
+    <section class="tickets">
+      <article class="ticket-card">
+        <div class="ticket-main">
+          <div class="ticket-code">TS-HW-0238 — El equipo no enciende</div>
+          <div class="ticket-meta">Juan Pérez — Piso 2, Oficina 204 — 18 sep 2025</div>
+        </div>
+        <button class="ticket-button">Abrir detalle</button>
+      </article>
+
+      <article class="ticket-card">
+        <div class="ticket-main">
+          <div class="ticket-code">TS-PRN-0524 — No puede imprimir</div>
+          <div class="ticket-meta">María Fernanda Gómez — Área de Contabilidad — 05 nov 2025</div>
+        </div>
+        <button class="ticket-button">Abrir detalle</button>
+      </article>
+
+      <article class="ticket-card">
+        <div class="ticket-main">
+          <div class="ticket-code">TS-NET-0631 — Red lenta o sin internet</div>
+          <div class="ticket-meta">Andrés Morales — 12 nov 2025 — 08:57</div>
+        </div>
+        <button class="ticket-button">Abrir detalle</button>
+      </article>
+
+      <article class="ticket-card">
+        <div class="ticket-main">
+          <div class="ticket-code">TS-SW-0789 — Pantallazo Azul (BSOD)</div>
+          <div class="ticket-meta">Camila Ríos — 03 dic 2025 — 11:26</div>
+        </div>
+        <button class="ticket-button">Abrir detalle</button>
+      </article>
+
+      <article class="ticket-card">
+        <div class="ticket-main">
+          <div class="ticket-code">TS-SW-0912 — Usuario molesto</div>
+          <div class="ticket-meta">Ricardo Salazar — 10 dic 2025 — 16:08</div>
+        </div>
+        <button class="ticket-button">Abrir detalle</button>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
+<script>
+  const selectEstado   = document.getElementById('estado');
+  const selectPrioridad = document.getElementById('prioridad');
+  const inputBuscar    = document.getElementById('buscar');
+  const tickets        = document.querySelectorAll('.ticket-card');
+
+  function aplicarFiltros() {
+    const estadoElegido    = selectEstado.value;
+    const prioridadElegida = selectPrioridad.value;
+    const textoBusqueda    = inputBuscar.value.trim().toUpperCase();
+
+    tickets.forEach(ticket => {
+      const estado    = ticket.dataset.estado;
+      const prioridad = ticket.dataset.prioridad;
+      const codigo    = ticket.dataset.codigo.toUpperCase();
+
+      const coincideEstado =
+        estadoElegido === 'Todos' || estado === estadoElegido;
+
+      const coincidePrioridad =
+        prioridadElegida === 'Todas' || prioridad === prioridadElegida;
+
+      const coincideBusqueda =
+        textoBusqueda === '' || codigo === textoBusqueda;
+
+      if (coincideEstado && coincidePrioridad && coincideBusqueda) {
+        ticket.style.display = 'flex';
+      } else {
+        ticket.style.display = 'none';
+      }
+    });
+  }
+
+  selectEstado.addEventListener('change', aplicarFiltros);
+  selectPrioridad.addEventListener('change', aplicarFiltros);
+  inputBuscar.addEventListener('input', aplicarFiltros);
+</script>
